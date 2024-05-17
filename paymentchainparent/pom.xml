@@ -206,7 +206,7 @@
         </plugins>
     </build>
     <modules>
-        <module>bussinesdomain</module>
         <module>infraestructuredomain</module>
+        <module>bussinessdomain</module>
     </modules>
 </project>
