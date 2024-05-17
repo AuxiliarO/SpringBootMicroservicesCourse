@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -22,7 +23,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
 /**
- *
  * @author Admin
  */
 @RestController
@@ -31,7 +31,7 @@ public class ProductRestController {
 
     @Autowired
     ProductRepository productRepository;
-    
+
     @GetMapping()
     public List<Product> list() {
         return productRepository.findAll();
@@ -45,7 +45,7 @@ public class ProductRestController {
     @PutMapping("/{id}")
     public ResponseEntity<?> put(@PathVariable(name = "id") long id, @RequestBody Product input) {
         Product find = productRepository.findById(id).get();
-        if(find != null){
+        if (find != null) {
             find.setCode(input.getCode());
             find.setName(input.getName());
         }
@@ -62,10 +62,11 @@ public class ProductRestController {
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable(name = "id") long id) {
         Optional<Product> findById = productRepository.findById(id);
-        if (findById.get() != null){
+        if (findById.get() != null) {
             productRepository.delete(findById.get());
         }
         return ResponseEntity.ok().build();
     }
-    
+
 }
+

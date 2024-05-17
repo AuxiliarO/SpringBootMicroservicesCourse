@@ -7,13 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="transactions" />
+        <module name="product" />
+        <module name="customer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="businessdomain" target="21" />
-      <module name="customer" target="21" />
-      <module name="product" target="21" />
-      <module name="transactions" target="21" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

@@ -16,6 +16,7 @@ public class TransactionRestController {
     @Autowired
     TransactionRepository transactionRepository;
 
+
     @GetMapping()
     public List<Transaction> list() {
         return transactionRepository.findAll();
